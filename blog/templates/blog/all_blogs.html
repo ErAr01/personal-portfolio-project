@@ -1,0 +1,17 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+Hello there! General Blog!
+
+<h2>Тут написано {{ posts.count }} постов</h2>
+
+{% for post in posts %}
+
+<a href="{% url 'blog:detail' post.id %}"><h2>{{ post.title }}</h2></a>
+<h5>{{ post.date }}</h5>
+<p>{{ post.message|safe|truncatechars:100 }}</p>
+
+{% endfor %}
+
+  {% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+     <h3><img src="{% static 'portfolio/icon_1.3.jpg' %}" height="50"> Сайт Ермилова Артема</h3>
+
+<p class="aligncenter">
+    <img src="{% static 'portfolio/self.jpg' %}" height="400">
+</p>
+<style>
+.aligncenter {
+    text-align: center;
+}
+</style>
+    <center><h2>Привет, этот сайт я создал с помощью Django 3. Изучал данную тему я по курсу Ника Волтера.</h2></center>
+
+{% for project in projects %}
+
+    <h1>{{ project.title }}</h1>
+    <h4>{{ project.description }}</h4>
+    <img src="{{ project.image.url }}" height="200">
+
+    {% if project.url %}
+        <br><a href="{{ project.url }}">Link</a>
+    {% endif %}
+
+{% endfor %}
+
+{% endblock %}
