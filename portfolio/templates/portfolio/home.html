@@ -4,8 +4,6 @@
 
 {% load static %}
 
-     <h3><img src="{% static 'portfolio/icon_1.3.jpg' %}" height="50"> Сайт Ермилова Артема</h3>
-
 <p class="aligncenter">
     <img src="{% static 'portfolio/self.jpg' %}" height="400">
 </p>
@@ -16,16 +14,28 @@
 </style>
     <center><h2>Привет, этот сайт я создал с помощью Django 3. Изучал данную тему я по курсу Ника Волтера.</h2></center>
 
-{% for project in projects %}
+ <center><h4 class="mt-5">Мои проекты:</h4></center>
 
-    <h1>{{ project.title }}</h1>
-    <h4>{{ project.description }}</h4>
-    <img src="{{ project.image.url }}" height="200">
+<hr>
+
+<div class="row">
+  {% for project in projects %}
+  <div class="col-lg-4 col-md-6">
 
     {% if project.url %}
-        <br><a href="{{ project.url }}">Link</a>
-    {% endif %}
+    <a href="{{ project.url }}">
+      <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    </a>
+    {% else %}
 
-{% endfor %}
+    <img src="{{ project.image.url }}" class="img-fluid mb-2">
+    {% endif %}
+    <a href="{% url 'portfolio:project_detail' project.id %}"><h3>{{ project.title }}</h3></a>
+    <p>{{ project.description }}</p>
+
+  </div>
+  {% endfor %}
+</div>
 
 {% endblock %}
+

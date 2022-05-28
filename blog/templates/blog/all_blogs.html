@@ -2,16 +2,16 @@
 
 {% block content %}
 
-Hello there! General Blog!
+<center><h2>Тут написано {{ posts.count }} постов</h2></center>
 
-<h2>Тут написано {{ posts.count }} постов</h2>
+  {% for post in posts %}
 
-{% for post in posts %}
+    <a href="{% url 'blog:detail' post.id %}"><h3>{{ post.title }}</h3></a>
 
-<a href="{% url 'blog:detail' post.id %}"><h2>{{ post.title }}</h2></a>
-<h5>{{ post.date }}</h5>
-<p>{{ post.message|safe|truncatechars:100 }}</p>
+    <p>{{ post.date }}</p>
 
-{% endfor %}
+    <h5>{{ post.message|safe|truncatechars:100 }}</h5>
 
-  {% endblock %}
+  {% endfor %}
+
+    {% endblock %}

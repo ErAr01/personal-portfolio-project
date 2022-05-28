@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<h1>{{ post.title }}</h1>
+<center><h1>{{ post.title }}</h1></center>
 
-<h2>--{{ post.date }}--</h2>
+<center><p>{{ post.date }}</p></center>
 
-<p>{{ post.message|safe }}</p>
+<h3>{{ post.message|safe }}</h3>
 
 {% endblock %}

@@ -10,10 +10,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="icon" type="image/jpg" href="{% static "portfolio/icon_empty.jpg" %}">
+    <link rel="icon" type="image/png" href="{% static "portfolio/icon_empty.png" %}">
     <title>Сайт Ермилова Артема</title>
   </head>
+
   <body>
+  <div style="margin-left:20px; margin-right:20px;">
 
   <ul class="nav justify-content-end">
   <li class="nav-item">
@@ -30,6 +32,8 @@
   </li>
 </ul>
 
+  <a href="{% url 'home' %}"><h3><img src="{% static 'portfolio/icon_empty.png' %}" height="50"> Сайт Ермилова Артема</h3></a>
+
     {% block content %}{% endblock %}
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -45,4 +49,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
     -->
   </body>
+</div>
 </html>
