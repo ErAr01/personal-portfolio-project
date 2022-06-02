@@ -12,7 +12,7 @@
     text-align: center;
 }
 </style>
-    <center><h2>Привет, этот сайт я создал с помощью Django 3. Изучал данную тему я по курсу Ника Волтера.</h2></center>
+    <center><h2>Привет, этот сайт я создал с помощью Django 3. Изучал данную тему я по курсу Ника Уолтера.</h2></center>
 
  <center><h4 class="mt-5">Мои проекты:</h4></center>
 
@@ -23,7 +23,7 @@
   <div class="col-lg-4 col-md-6">
 
     {% if project.url %}
-    <a href="{{ project.url }}">
+    <a href="{{ project.url }}"  target="_blank">
       <img src="{{ project.image.url }}" class="img-fluid mb-2">
     </a>
     {% else %}
